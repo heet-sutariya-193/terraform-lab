@@ -1,0 +1,40 @@
+name: 'Terraform Validation'
+
+on:
+  push:
+    branches: ["main"]
+  pull_request:
+    branches: ["main"]
+
+permissions:
+  contents: read
+
+jobs:
+  terraform:
+    name: 'Terraform Format, Validate and Plan'
+    runs-on: ubuntu-latest
+    
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v3
+
+    - name: Setup Terraform
+      uses: hashicorp/setup-terraform@v2
+      with:
+        terraform_version: 1.5.7
+
+    - name: Terraform Format
+      run: terraform fmt -check -recursive
+      continue-on-error: true
+
+    - name: Terraform Init
+      run: terraform init
+      working-directory: ./day5
+
+    - name: Terraform Validate
+      run: terraform validate
+      working-directory: ./day5
+
+    - name: Terraform Plan
+      run: terraform plan
+      working-directory: ./day5
