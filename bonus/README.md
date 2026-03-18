@@ -255,3 +255,7 @@ total_containers = 4
 * Implemented loops and for expressions
 * Built scalable configurations
 * Reduced manual repetition in infrastructure code
+
+<img width="845" height="592" alt="image" src="https://github.com/user-attachments/assets/cd1abfb8-4021-4fcc-a7f7-d152fb4e29ee" />
+<img width="1462" height="153" alt="image" src="https://github.com/user-attachments/assets/032546fe-f0c1-4ea6-a431-803eb8730b48" />
+
